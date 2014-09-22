@@ -129,7 +129,7 @@ module CarrierWaveDirect
     # e.g. guid/filename_thumb.jpg instead of CarrierWave's default: thumb_guid/filename.jpg
     def full_filename(for_file)
       extname = File.extname(for_file)
-      [for_file.chomp(extname), version_name].compact.join('_') << extname
+      [version_name, for_file.chomp(extname)].compact.join('_') << extname
     end
 
     def generate_policy(options)
